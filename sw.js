@@ -22,7 +22,7 @@ self.addEventListener('activate', event => {
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (cacheName.startsWith('sbtool-cache-') && cacheName !== CACHE_NAME) {
+          if (cacheName.startsWith('sbhome-cache-') && cacheName !== CACHE_NAME) {
             return caches.delete(cacheName);
           }
         })
