@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="./icon-192x192.png" type="image/png">
     <link rel="apple-touch-icon" href="./icon-192x192.png">
     <!-- Link to manifest if you create one for the hub -->
-    <!-- <link rel="manifest" href="./hub-manifest.webmanifest"> -->
+    <link rel="manifest" href="./manifest.webmanifest">
 
     <style>
         /* --- Embedded CSS - Based on your original styles.css + Hub additions --- */
@@ -180,5 +180,18 @@
 
     </div>
     <!-- No external JS needed for this simple navigation page -->
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(registration => {
+          console.log('Service Worker registered successfully:', registration.scope);
+        })
+        .catch(error => {
+          console.log('Service Worker registration failed:', error);
+        });
+    });
+  }
+    </script>
 </body>
 </html>
