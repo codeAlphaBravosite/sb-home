@@ -1,6 +1,6 @@
 {
-  "name": "SB Tool",
-  "short_name": "SB Tool",
+  "name": "SB Home",
+  "short_name": "SB Home",
   "description": "A powerful SB Tool app",
   "start_url": "./index.html",
   "scope": ".",
